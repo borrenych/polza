@@ -1,0 +1,10 @@
+<%= form_tag orders_path, method: :post do %>
+  <% @ingredients.each do |ingredient| %>
+    <label>
+      <%= check_box_tag 'order[excluded_ingredient_ids][]', ingredient.id, false %>
+      <%= ingredient.name %>
+    </label><br>
+  <% end %>
+
+  <%= submit_tag 'Create Order' %>
+<% end %>
